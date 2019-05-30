@@ -77,12 +77,9 @@ class ScanScreen extends Component<IScanScreenProps, IScanScreenState> {
                     currentUrl: ScanScreen.cleanPath(tag.ndefMessage.toString())
                   });
                 } else {
-                  Alert.alert(
-                    "NFC ndefMessage undefined",
-                    "Unable to find an ndefMessage on this NFC tag",
-                    undefined,
-                    { cancelable: false }
-                  );
+                  Alert.alert("Tag Data", JSON.stringify(tag), undefined, {
+                    cancelable: false
+                  });
                 }
               },
               "Hold your device over the tag",
